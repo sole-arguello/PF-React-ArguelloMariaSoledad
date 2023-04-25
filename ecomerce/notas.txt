@@ -1,0 +1,37 @@
+crear:
+
+1- dentro de la carpeta 
+2- npm create vite@latest y el nombre de proyecto
+3- elejir React
+4- elejir Javascript
+5- cd comienzo del nombre de la carpeta + tab me lleva a la prox carpeta
+6- npm install (crea la carpeta node modles)
+7- dentro de la carpeta creada correr el servidor
+8- ctrl + click en el link
+9- ctrl + c detiene el servidor
+10- mpn i sass (instala dependencias de sass)
+11- vuelvo a correr el servidor npm run dev
+
+correr el servidor 
+
+npm run dev
+
+
+para importar dentro de los componentes 
+
+rfce + tab
+
+
+/////////////////////////////////////////
+
+https://react-bootstrap.github.io/
+
+- en Get Started entro: tengo dos libreias " npm install react-bootstrap bootstrap " puedo instalar solo una o ambas
+- detengo con ctrol + c el servidor y luego hago npm install "lo que sea" y vuelvo a levantar el server
+- importar el css " import 'bootstrap/dist/css/bootstrap.min.css'; "
+
+
+estructura bootstrap
+div container 
+div row g-3 justify-content-center
+div col-lg-3 col-md-6 col-sm-10 y dentro las cards00
