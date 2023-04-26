@@ -43,8 +43,7 @@ export const CartProvider = ({children}) => {
         // const existsItem = cartList.some(prod => prod.id === itemId)
         // console.log(existsItem)
         // if(!existsItem){
-        //     setCartList([...cartList, newProducts])
-        //     console.log()
+        // console.log(setCartList([...cartList, newProducts]))
         // }else{
         //     console.log("producto repetido")
         // }
