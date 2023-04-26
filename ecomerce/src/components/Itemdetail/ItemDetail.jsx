@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom'
 
 function ItemDetail({img, titulo, precio, categoria}) {
 
+  //para la condicion
   const [isCant, setIsCant] = useState(true)
+  
 
   const handleOnAdd = () => {
+    
     setIsCant(false)
   }
 
@@ -29,8 +32,8 @@ function ItemDetail({img, titulo, precio, categoria}) {
               isCant
               ? <ItemCount initial={1} stock={10} onAdd={handleOnAdd}/>
               : <>
-                  <Link to='/cart' >Finalizar Compra</Link>
-                  <Link to='/' >Continuar Comprando</Link>
+                  <Link to='/cart' className='btn btn-outline-danger mx-2'>Finalizar Compra</Link>
+                  <Link to='/'className='btn btn-outline-success'>Continuar Comprando</Link>
                 </>
             }
             
