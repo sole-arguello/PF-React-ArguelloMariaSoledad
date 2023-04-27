@@ -6,21 +6,27 @@ function CartItem() {
     const {cartList, clearCart} = useCartContext()
     console.log(cartList)
   return (
-    <div>
+    <div className='container'>
         {
             cartList.map( prod => {
 
-                <>
-                <img src ={prod.img} />
-                <p>{prod.categiria} - {prod.titulo}</p>
-                <p>$ {prod.precio}</p>
-                <button>X</button>
-                <p>SubTotal: </p>
-                </>
+                return(
+                    <div className='d-lg-flex justify-content-around'>
+                    <img src ={prod.img} className='w-25'/>
+                    <p>{prod.categoria} {prod.titulo}</p>
+                    <p>$ {prod.precio}</p>
+                    <p>Cantidad: </p>
+                    <button>X</button>
+                    <p>SubTotal: </p>
+                    </div>
+                )
             })
         }
+        <p>Total: </p>
+        
 
-        <button onClick={clearCart}>Vaciar Carrito</button>
+        <button onClick={clearCart} className='btn btn-outline-danger mx-2'>Vaciar Carrito</button>
+        <button className='btn btn-outline-info fw-semibold'>Confirmar Compra</button>
     </div>
   )
 }

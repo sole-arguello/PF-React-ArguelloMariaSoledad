@@ -18,20 +18,13 @@ export const getProductByCategory = (category) => {
   }
 
 let productos = [
-  {
-    id: '1',
-    precio: 1200,
-    titulo: "Encaje",
-    categoria: "Conjunto",
-    cantidad: 1,
-    img: "/public/assets/conjunto1.jpg",
-  },
+  {id: '1', precio: 1200, titulo: "Encaje", categoria: "Conjunto", stock: 20, img: "/public/assets/conjunto1.jpg",},
   {
     id: '2',
     precio: 1500,
     titulo: "Algodon",
     categoria: "Conjunto",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/conjunto2.jpg",
   },
   {
@@ -39,7 +32,7 @@ let productos = [
     precio: 2000,
     titulo: "Combinado",
     categoria: "Conjunto",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/conjunto3.jpg",
   },
   {
@@ -47,7 +40,7 @@ let productos = [
     precio: 2000,
     titulo: "Encaje",
     categoria: "Conjunto",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/conjunto4.jpg",
   },
   {
@@ -55,7 +48,7 @@ let productos = [
     precio: 1400,
     titulo: "Calado",
     categoria: "Top",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/top1.jpg",
   },
 
@@ -64,7 +57,7 @@ let productos = [
     precio: 1600,
     titulo: "Encaje",
     categoria: "Top",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/top2.jpg",
   },
   {
@@ -72,7 +65,7 @@ let productos = [
     precio: 1600,
     titulo: "Combinado",
     categoria: "Top",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/top3.jpg",
   },
   {
@@ -80,7 +73,7 @@ let productos = [
     precio: 1600,
     titulo: "Calado",
     categoria: "Top",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/top4.jpg",
   },
 
@@ -89,7 +82,7 @@ let productos = [
     precio: 900,
     titulo: "Maria",
     categoria: "Bombis",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/bombis1.jpg",
   },
 
@@ -98,7 +91,7 @@ let productos = [
     precio: 800,
     titulo: "Victoria",
     categoria: "Bombis",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/bombis2.jpg",
   },
 
@@ -107,7 +100,7 @@ let productos = [
     precio: 500,
     titulo: "Culote",
     categoria: "Bombis",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/bombis3.jpg",
   },
 
@@ -116,7 +109,7 @@ let productos = [
     precio: 450,
     titulo: "Less regulables",
     categoria: "Bombis",
-    cantidad: 1,
+    stock: 20,
     img: "/public/assets/bombis4.jpg",
   },
 ];

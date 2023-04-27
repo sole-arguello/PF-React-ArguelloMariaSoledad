@@ -13,15 +13,16 @@ function ItemDetail({img, titulo, precio, categoria}) {
   //para la condicion
   const [isCant, setIsCant] = useState(true)
 
-  const {addItem, cartList} = useCartContext()
+  const {addItem} = useCartContext()
   
 
   const handleOnAdd = (cantidad) => {
+    //console.log(cantidad)
     addItem({img, titulo, precio, categoria}, cantidad)
     setIsCant(false)
-    console.log("cantidad agregada: " , cantidad)
+    //console.log("cantidad agregada: " , cantidad)
   }
-  console.log(cartList)
+  
 
   return (
     <Card className='container d-flex flex-md-row py-3'>
