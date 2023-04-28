@@ -6,8 +6,6 @@ import ItemCount from '../ItemCount/ItemCount'
 import { Card, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-
-
 function ItemDetail({img, titulo, precio, categoria}) {
 
   //para la condicion
@@ -18,7 +16,7 @@ function ItemDetail({img, titulo, precio, categoria}) {
 
   const handleOnAdd = (cantidad) => {
     //console.log(cantidad)
-    addItem({img, titulo, precio, categoria}, cantidad)
+    addItem({img, titulo, precio, categoria, cantidad})
     setIsCant(false)
     //console.log("cantidad agregada: " , cantidad)
   }
