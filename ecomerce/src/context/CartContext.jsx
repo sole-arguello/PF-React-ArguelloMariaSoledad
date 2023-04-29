@@ -25,7 +25,7 @@ export const CartProvider = ({children}) => {
         }else{
             //Si el id es = se actualiza su cantidad en lugar de agregar un nuevo elemento
             const actualizoCartList = [...cartList]
-            actualizoCartList[index].cantidad += newProduct.cantidad
+            actualizoCartList[index].cantidad = actualizoCartList[index] + newProduct.cantidad
             setCartList(actualizoCartList)
         }
         

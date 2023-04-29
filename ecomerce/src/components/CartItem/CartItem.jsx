@@ -1,9 +1,6 @@
-
 import { useCartContext } from '../../context/CartContext'
 
-
 function CartItem() {
-
     const {cartList, clearCart, removeItem} = useCartContext()
     console.log(cartList)
   return (

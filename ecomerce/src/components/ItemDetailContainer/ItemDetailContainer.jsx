@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container, Spinner } from 'react-bootstrap'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import ItemDetail from '../ItemDitail/ItemDetail'
 import { getProductoById } from '../../utils/mockFetch'
 
 
