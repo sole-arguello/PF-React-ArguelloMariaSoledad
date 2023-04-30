@@ -19,7 +19,7 @@ function CartItem() {
                             <div className='d-lg-flex'>
                                 <div className='px-md-3'>
                                     <small className=''>Titulo</small>
-                                    <div className="d-sm-flex gap-sm-2 d-lg-block">
+                                    <div className="d-sm-flex gap-sm-2 ">
                                         <h4 className=''>{prod.categoria} </h4>
                                         <h4 className=''>{prod.titulo}</h4>
                                     </div>
@@ -37,9 +37,9 @@ function CartItem() {
                                     </div>
 
                                     <div className=" d-flex gap-5 align-items-center">
-                                        <div className='d-sm-flex d-lg-block gap-sm-3'>
+                                        <div className='d-sm-flex d-lg-block gap-sm-3 '>
                                             <small>Cantidad</small>
-                                            <p className='fw-semibold'> {prod.cantidad}</p>
+                                            <p className='fw-semibold text-center'> {prod.cantidad}</p>
                                         </div>
                                         <button className='btn btn-danger ' onClick={() => removeItem(prod.id)}>X</button>
                                     </div>
