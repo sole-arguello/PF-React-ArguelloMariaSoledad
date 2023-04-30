@@ -1,11 +1,15 @@
 
-
+.carrito__producto--imag{
+    width: 15rem;
+    border: .5px solid rgb(180, 178, 178);
+    border-radius: .5rem;
+}
 
 @media (width < 576px) {
-    .carrito__producto--imag{
+    .carrito__producto--imag {
         /* width: 20rem; */
-        width: 15rem;
-        
+        width: 2rem;
+        border: 1px solid red;
     }
 }
 

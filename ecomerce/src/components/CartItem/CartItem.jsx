@@ -12,36 +12,36 @@ function CartItem() {
                 cartList.map( prod => {  
 
                     return(
-                        <div className='carrito__producto p-sm-5 d-md-flex flex-md-row p-lg-3 align-items-sm-center gap-lg-5 card bg-light' >
+                        <div className='p-sm-5 d-md-flex flex-md-row p-lg-3 align-items-sm-center gap-lg-5 card bg-light' >
                             
                             <img src={prod.img} className='carrito__producto--imag' />
                             
                             <div className='d-lg-flex'>
-                                <div className='carrito__producto--titulo px-md-3'>
+                                <div className='px-md-3'>
                                     <small className=''>Titulo</small>
-                                    <div className="carrito__producto--TituloCatg d-sm-flex gap-sm-2 d-lg-block">
+                                    <div className="d-sm-flex gap-sm-2 d-lg-block">
                                         <h4 className=''>{prod.categoria} </h4>
                                         <h4 className=''>{prod.titulo}</h4>
                                     </div>
                                 </div>
 
                                 <div className='p-md-3 d-lg-flex gap-lg-3'>
-                                    <div className='carrito__producto--precio d-sm-flex d-lg-block gap-3 px-md-2'>
+                                    <div className=' d-sm-flex d-lg-block gap-3 px-md-2'>
                                         <small>Precio</small>
                                         <p className=' fw-semibold'>$ {prod.precio}</p>
                                     </div>
 
-                                    <div className="carrito__producto--subTotal d-sm-flex d-lg-block gap-3 px-md-2">
+                                    <div className=" d-sm-flex d-lg-block gap-3 px-md-2">
                                         <small>Subtotal</small>
                                         <p className=' fw-semibold'>$ {prod.precio * prod.cantidad}</p>
                                     </div>
 
-                                    <div className="carrito__producto--cantidad d-flex gap-5 align-items-center">
+                                    <div className=" d-flex gap-5 align-items-center">
                                         <div className='d-sm-flex d-lg-block gap-sm-3'>
                                             <small>Cantidad</small>
-                                            <p className='text-center  fw-semibold'> {prod.cantidad}</p>
+                                            <p className='fw-semibold'> {prod.cantidad}</p>
                                         </div>
-                                        <button className='carrito__producto--delete btn btn-danger ' onClick={() => removeItem(prod.id)}>X</button>
+                                        <button className='btn btn-danger ' onClick={() => removeItem(prod.id)}>X</button>
                                     </div>
                                 </div>  
                             </div>
