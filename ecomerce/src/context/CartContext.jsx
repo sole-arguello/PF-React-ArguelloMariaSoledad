@@ -28,8 +28,6 @@ export const CartProvider = ({children}) => {
             actualizoCartList[index].cantidad += newProduct.cantidad
             setCartList(actualizoCartList)
         }
-        
-
     }
 
     //remover item
@@ -43,13 +41,19 @@ export const CartProvider = ({children}) => {
         setCartList([])
     }   
 
-    //cantidad total
-    const total = cartList.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
+    //cantidad total de la compra
+    const totalCompra = cartList.reduce((total, prod) => total + prod.precio * prod.cantidad, 0)
+    
+    //cantidad total de productos en carrito
+    const totalEnCarrito = cartList.reduce( (total, prod) => total + prod.cantidad, 0)
+
+
 // ---------------------------------------
     return(
         <CartContext.Provider value={{
             cartList,
-            total,
+            totalCompra,
+            totalEnCarrito,
             addItem,
             clearCart,
             removeItem,
