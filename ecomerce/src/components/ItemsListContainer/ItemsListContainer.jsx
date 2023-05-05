@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import { collection, getDocs, getFirestore } from 'firebase/firestore'
-import { getProductByCategory, getProductos } from "../../utils/mockFetch";
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+//import { getProductByCategory, getProductos } from "../../utils/mockFetch";
 import { Container } from 'react-bootstrap'
 //componentes
 import ItemList from "../ItemList/ItemList";
@@ -14,34 +14,42 @@ function ItemsListContainer({ greeting }) {
     const [isLoading, setIsLoading ] = useState(true)
     
     const { prodCateg } = useParams()
-    useEffect(() => {
+    console.log(prodCateg)
+    // useEffect(() => {
       
-        setTimeout(() => {
-            //console.log(prodCateg)
+    //     setTimeout(() => {
+    //         //console.log(prodCateg)
 
-            const mockFetch = prodCateg ? getProductByCategory : getProductos
+    //         const mockFetch = prodCateg ? getProductByCategory : getProductos
 
-            mockFetch(prodCateg)
-              .then(respuesta => {
-                setProductos(respuesta)
-              })
-              .catch(err => console.log(err))
-              .finally( () => setIsLoading(false))
-        }, 1000);
+    //         mockFetch(prodCateg)
+    //           .then(respuesta => {
+    //             setProductos(respuesta)
+    //           })
+    //           .catch(err => console.log(err))
+    //           .finally( () => setIsLoading(false))
+    //     }, 1000);
         
+    // }, [prodCateg])
+
+    useEffect( () => {
+      setTimeout( () => {
+        //guardo mi db
+        const dbFirestore = getFirestore()
+
+        const categoryRef = prodCateg
+        console.log(categoryRef)
+              //muestro por categoria
+              ? query( collection ( dbFirestore, 'productos'), where ( 'categoria', '==', prodCateg ) )
+              //muestro todos los productos
+              : collection ( dbFirestore, 'productos')
+
+        getDocs(categoryRef)
+           .then(resp => setProductos(resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ))))
+           .catch(err => console.log(err))
+           .finally( () => setIsLoading(false))
+      }, 1000)
     }, [prodCateg])
-
-    // useEffect( () => {
-    //   setTimeout( () => {
-    //     const dbFirestore = getFirestore()
-    //     const queryCollection = collection(dbFirestore, 'productos')
-
-    //     getDocs(queryCollection)
-    //       .then(resp => setProductos(resp.docs.map( producto => ( { id: producto.id, ...producto.data() } ))))
-    //       .catch(err => console.log(err))
-    //       .finally( () => setIsLoading(false))
-    //   }, 1000)
-    // }, [])
 
 
   return (
