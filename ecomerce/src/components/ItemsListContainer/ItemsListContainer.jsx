@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import { getProductByCategory, getProductos } from "../../utils/mockFetch";
-import { Spinner, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 //componentes
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading";
