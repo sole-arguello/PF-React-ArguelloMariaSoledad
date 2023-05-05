@@ -10,7 +10,7 @@ export const CartProvider = ({children}) => {
 
     //carrito comienza vacio
     const [cartList, setCartList] = useState([])
-    console.log(cartList)
+    //console.log(cartList)
 
     //agregar producto
     const addItem = (newProduct) => {
@@ -43,13 +43,17 @@ export const CartProvider = ({children}) => {
         setCartList([])
     }   
 
+    //cantidad total
+    const total = cartList.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
 // ---------------------------------------
     return(
         <CartContext.Provider value={{
             cartList,
+            total,
             addItem,
             clearCart,
-            removeItem
+            removeItem,
+            
         }}>
             { children }
         </CartContext.Provider>

@@ -3,7 +3,7 @@ import { Button, Card, CardGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
-  const Item = memo (( {id, titulo, img, precio, categoria} ) => {
+  const Item = memo ( function ( {id, titulo, img, precio, categoria} ) {
     return (
   
       <CardGroup className='col-lg-3 col-md-6 col-sm-10'>
