@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom'
 
 
 function Cart() {
-    const {cartList, clearCart, cantidadCart, total} = useContext(CartContext)
-    console.log(cartList)
-
-    if (cantidadCart === 0) {
+    const {cartList, clearCart, totalEnCarrito, totalCompra} = useContext(CartContext)
+    
+ 
+    if (totalEnCarrito === 0) {
         return(
-            <div className=''>
-                <h1>No hay productos en el carrito</h1>
-                <Link to='/' >Realizar Compra</Link>
+            <div className='text-center'>
+                <h1 className=' display-5 fw-semibold my-5 text-danger'>No hay productos en el carrito</h1>
+                <Link to='/' className='btn btn-outline-primary fw-semibold fs-5'>Realizar Compra</Link>
             </div>
         )
     }
@@ -32,7 +32,7 @@ function Cart() {
                 </div>
 
                 <div className="carrito__acciones--derecha d-sm-flex gap-3">
-                    <p className='carrito__acciones--total'>Total: $ { total }</p>
+                    <p className='carrito__acciones--total'>Total: $ { totalCompra }</p>
                     <Link className='btn btn-outline-info fw-semibold'>Checkout</Link>
                 </div>
             </div>
