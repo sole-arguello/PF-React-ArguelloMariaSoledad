@@ -1,9 +1,9 @@
-import React, { memo } from 'react'
+import { memo } from 'react'
 import { Button, Card, CardGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-memo(
-  function Item( {id, titulo, img, precio, categoria} ) {
+
+  const Item = memo (( {id, titulo, img, precio, categoria} ) => {
     return (
   
       <CardGroup className='col-lg-3 col-md-6 col-sm-10'>
@@ -25,6 +25,5 @@ memo(
     )
   }
 )
-
 
 export default Item
