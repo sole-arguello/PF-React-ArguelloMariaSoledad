@@ -4,10 +4,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import { initFirestore } from './firebase/config'
+// import { initFirestore } from './firebase/config'
 
 
-initFirestore()
+// initFirestore()
 //equivale app() que viene importado de app funcion y archivo app
 //(root app ( componentes ))
 ReactDOM.createRoot(document.getElementById('root')).render(
