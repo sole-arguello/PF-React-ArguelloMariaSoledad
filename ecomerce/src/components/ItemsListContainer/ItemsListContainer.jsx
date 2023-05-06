@@ -15,34 +15,15 @@ function ItemsListContainer({ greeting }) {
     
     const { prodCateg } = useParams()
     console.log(prodCateg)
-    // useEffect(() => {
-      
-    //     setTimeout(() => {
-    //         //console.log(prodCateg)
-
-    //         const mockFetch = prodCateg ? getProductByCategory : getProductos
-
-    //         mockFetch(prodCateg)
-    //           .then(respuesta => {
-    //             setProductos(respuesta)
-    //           })
-    //           .catch(err => console.log(err))
-    //           .finally( () => setIsLoading(false))
-    //     }, 1000);
-        
-    // }, [prodCateg])
 
     useEffect( () => {
       setTimeout( () => {
         //guardo mi db
         const dbFirestore = getFirestore()
-
+        //muestro x categoria o todos los productos
         const categoryRef = prodCateg
-        console.log(categoryRef)
-              //muestro por categoria
               ? query( collection ( dbFirestore, 'productos'), where ( 'categoria', '==', prodCateg ) )
-              //muestro todos los productos
-              : collection ( dbFirestore, 'productos')
+              : collection ( dbFirestore, 'productos')         
 
         getDocs(categoryRef)
            .then(resp => setProductos(resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ))))
