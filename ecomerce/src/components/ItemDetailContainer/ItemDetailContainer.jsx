@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Container, Spinner } from 'react-bootstrap'
 import ItemDetail from '../ItemDitail/ItemDetail'
 import { getProductoById } from '../../utils/mockFetch'
-//import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 
 
@@ -17,21 +17,16 @@ function ItemDetailContainer({greeting}) {
 
     useEffect( () => {
       setTimeout( () => {
-        getProductoById(prodId)
-        .then( ( resultado ) => {
-            setProducto(resultado)
-            //console.log(resultado)
-        })
-        .catch( (err) => console.log(err))
-        .finally(() => setIsLoading(false))
-        // const dbFirestore = getFirestore()
-        // const queryDoc = doc(dbFirestore, 'productos', prodId)
+        //guardo mi db
+        const dbFirestore = getFirestore()
+        //guardo 1 producto por su id
+        const queryDoc = doc(dbFirestore, 'productos', prodId)
         
-        // //traigo un producto por su id
-        // getDoc(queryDoc)
-        //   .then(resp => setProducto(({ id: resp.id, ...resp.data()})))
-        //   .catch( (err) => console.log(err))
-        //   .finally(() => setIsLoading(false))
+        //traigo un producto por su id
+        getDoc(queryDoc)
+          .then(resp => setProducto(({ id: resp.id, ...resp.data()})))
+          .catch( (err) => console.log(err))
+          .finally(() => setIsLoading(false))
       }, 1000)  
     }, [prodId])
   return (
