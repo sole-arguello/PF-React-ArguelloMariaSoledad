@@ -5,7 +5,7 @@ import '../CartItem/cartItem.css'
 
 function CartItem({id, precio, img, titulo, categoria, cantidad}) {
     const {removeItem, cartList} = useContext(CartContext)
-    console.log(cartList)
+    //console.log(cartList)
     return(
         <div className='p-sm-5 d-md-flex flex-md-row p-lg-3 align-items-sm-center gap-lg-5 card bg-light' >
             

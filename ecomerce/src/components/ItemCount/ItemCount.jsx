@@ -26,7 +26,7 @@ function ItemCount( { initial, stock, onAdd }) {
             <Button variant='warning border-secondary' onClick={sumar} > + </Button>
          </Container>
         
-          <Button variant="warning border-secondary my-3" onClick={ () => onAdd(cantidad)} disabled = {!stock}>Agregar al carrito</Button>
+         <Button variant="warning border-secondary my-3" onClick={ () => onAdd(cantidad)} disabled = {!stock}>Agregar al carrito</Button>
     </Container>
   )
 }
