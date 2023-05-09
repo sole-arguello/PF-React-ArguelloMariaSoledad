@@ -2,11 +2,29 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import { Link } from 'react-router-dom'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 
 
 function Cart() {
     const {cartList, clearCart, totalEnCarrito, totalCompra} = useContext(CartContext)
+
+    //funcion para el formulario
+    const generarOrden = () => {
+        //console.log('generando orden {buyer: {nombre: "sole", item: carrito, total: 2000}')
+        const order = {}
+        order.buyer = {name: "sole", phone: '225566', email: 'S@gmail.com'}
+        order.items = cartList.map(({ titulo, id, precio, cantidad}) => ({id, titulo, precio, cantidad}))
+        order.total = totalCompra()
+        console.log(order)
+
+        //insertar la ordenh a firebase
+        const dbFirestore = getFirestore()
+        const orderCollection = collection (dbFirestore, 'orders')
+
+        addDoc(orderCollection, order)
+            .then(resp => console.log(resp))
+    }
     
  
     if (totalEnCarrito === 0) {
@@ -33,7 +51,9 @@ function Cart() {
 
                 <div className="carrito__acciones--derecha d-sm-flex gap-3">
                     <p className='carrito__acciones--total'>Total: $ { totalCompra }</p>
-                    <Link className='btn btn-outline-info fw-semibold'>Checkout</Link>
+                    <Link className='btn btn-outline-info fw-semibold' onClick={generarOrden}>Checkout</Link>
+
+                   
                 </div>
             </div>
 

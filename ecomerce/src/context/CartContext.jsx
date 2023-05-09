@@ -20,10 +20,10 @@ export const CartProvider = ({children}) => {
         const index = cartList.findIndex(prod => prod.id === newProduct.id)
         console.log(index)
         if(index === -1){
-            //Si !id al que esta se agrega el nuevo elemento al carrito
+            //Si id = 1 al que esta se agrega el nuevo elemento al carrito
             setCartList([...cartList, newProduct])
         }else{
-            //Si el id es = se actualiza su cantidad en lugar de agregar un nuevo elemento
+            //Si el id es != se actualiza su cantidad en lugar de agregar un nuevo elemento
             const actualizoCartList = [...cartList]
             actualizoCartList[index].cantidad += newProduct.cantidad
             setCartList(actualizoCartList)
