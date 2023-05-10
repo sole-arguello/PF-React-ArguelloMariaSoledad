@@ -1,10 +1,13 @@
 
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { CartContext } from '../../context/CartContext'
 
 
-function Checkout({cartList, totalCompra}) {
+function Checkout() {
+
+        const {cartList, totalCompra} = useContext(CartContext)
         
         //defino estados para el form
         const [dataForm, setDataForm] = useState({
