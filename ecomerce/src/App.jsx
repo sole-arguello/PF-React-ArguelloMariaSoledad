@@ -10,10 +10,12 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart";
 
 
+
 //estilos 
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Formulario from "./components/Formulario/Formulario";
+import Checkout from "./components/Checkout/Checkout";
+
 
 
 
@@ -32,9 +34,11 @@ function App() {
           <Route path='/item/:prodId' element={<ItemDetailContainer greeting= {'Detalle del producto'} />} />
           <Route path='/cart' element={<Cart greeting= {'Tu Carrito'} />} />
 
-          <Route path='/formulario' element={ <Formulario greeting={ 'Complete el Formulario' }/> } />
+          <Route path='/ckeckout' element={ <Checkout greeting={ 'Complete el Formulario' }/> } />
 
           <Route path='*' element={ <Navigate to='/'/> }/>
+
+          
        </Routes>
       
       </BrowserRouter>
