@@ -7,7 +7,7 @@ import Checkout from '../Checkout/Checkout'
 function Cart( { greeting })  {
     const [checkout, setCheckout] = useState(false)
 
-    const {cartList, clearCart, totalEnCarrito, totalBuys} = useContext(CartContext)
+    const {cartList, clearCart, totalBuys} = useContext(CartContext)
     
     const handleCheckout = () => {
         setCheckout(true)

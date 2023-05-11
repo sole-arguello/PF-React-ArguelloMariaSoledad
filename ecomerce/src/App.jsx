@@ -1,23 +1,15 @@
 //librerias 
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";  
-
 //componentes creados por mi 
 import NavBar from "./components/NavBar/NavBar";
 import ItemsListContainer from "./components/ItemsListContainer/ItemsListContainer";
-//import ItemCount from "./components/ItemCount/ItemCount";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
-
-
-
+import Checkout from "./components/Checkout/Checkout";
 //estilos 
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Checkout from "./components/Checkout/Checkout";
-
-
-
 
 
 function App() {
@@ -38,7 +30,6 @@ function App() {
 
           <Route path='*' element={ <Navigate to='/'/> }/>
 
-          
        </Routes>
       
       </BrowserRouter>
