@@ -8,19 +8,15 @@ import { checkoutValidacion } from '../CheckoutForm/checkoutValidation'
 
 const CheckoutValidacion = checkoutValidacion(CheckoutForm)
 
-function Checkout({ greeting, validateForm}) {
+function Checkout({ greeting }) {
 
         const {cartList, totalBuys, clearCart} = useContext(CartContext)
         
         const [ordenId, setOrdenId] = useState(null);
         const [dataForm, setDataForm] = useState({name: '', phone: '', email: '', emailConfirm: ''})
         
-        const generateOrder = (evt) => {
+        const generateOrder = () => {
 
-            //evt.preventDefault()
-            // if(validateForm()){
-            //     console.log('enviado:', dataForm )
-            // }
             const order = {}
             order.buyer = dataForm;
             order.items = cartList.map(({ title, id, price, quantity}) => ({id, title, price, quantity}))
