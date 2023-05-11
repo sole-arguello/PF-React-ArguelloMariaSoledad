@@ -3,7 +3,7 @@ import { CartContext } from '../../context/CartContext'
 import '../CartItem/cartItem.css'
 
 
-function CartItem({id, price, img, title, quantity}) {
+function CartItem({id, price, img, title, quantity, category}) {
     const {removeItem} = useContext(CartContext)
 
     return(
@@ -15,7 +15,7 @@ function CartItem({id, price, img, title, quantity}) {
                 <div className='px-md-3'>
                     <small className=''>Titulo</small>
                     <div className="d-sm-flex gap-sm-2 ">
-                        <h4 className=''>{title}</h4>
+                        <h4 className=''>{category} {title}</h4>
                     </div>
                 </div>
     
