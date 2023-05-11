@@ -1,4 +1,3 @@
-import { title } from 'process'
 import { memo } from 'react'
 import { Button, Card, CardGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
