@@ -1,25 +1,24 @@
 import { useState } from 'react'
-import { useCartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
+import { useCartContext } from '../../context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 
 import { Card, Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 
 
-function ItemDetail({id, img, titulo, precio, categoria}) {
+function ItemDetail({id, img, title, price, category}) {
 
-  //para la condicion
   const [isCant, setIsCant] = useState(true)
 
   const {addItem} = useCartContext()
   
 
-  const handleOnAdd = (cantidad) => {
-    //console.log(cantidad)
-    addItem({id, img, titulo, precio, categoria, cantidad})
+  const handleOnAdd = (quantity) => {
+    
+    addItem({id, img, title, price, category, quantity})
     setIsCant(false)
-    //console.log("cantidad agregada: " , cantidad)
+
   }
   
 
@@ -28,8 +27,8 @@ function ItemDetail({id, img, titulo, precio, categoria}) {
          
         <Card.Img variant='center' src={img} alt="imagen del producto" style={ {width: '15rem', height: '15rem'} }/>
         <Container className=''>
-          <Card.Title className='fs-4'>{titulo}</Card.Title>
-          <Card.Text className='fs-5'>Precio: ${precio}</Card.Text>
+          <Card.Title className='fs-4'>{title}</Card.Title>
+          <Card.Text className='fs-5'>Precio: ${price}</Card.Text>
             <Card.Text className=''> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Magnam natus dolore praesentium officiis! In nam aperiam atque tenetur, 
 

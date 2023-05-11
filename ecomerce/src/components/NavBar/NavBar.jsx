@@ -17,9 +17,9 @@ const NavBar = () => {
         <Navbar.Collapse className=' px-5' id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavLink className='navLink conatiner px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/' >Inicio</NavLink>
-            <NavLink className='navLink px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/categoria/Conjunto' >Conjuntos</NavLink>
-            <NavLink className='navLink px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/categoria/Top' >Top</NavLink>
-            <NavLink className='navLink px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/categoria/Bombis' >Bombis</NavLink>
+            <NavLink className='navLink px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/category/Conjunto' >Conjuntos</NavLink>
+            <NavLink className='navLink px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/category/Top' >Top</NavLink>
+            <NavLink className='navLink px-5 text-dark fw-semibold fs-5 text-decoration-none' to='/category/Bombis' >Bombis</NavLink>
           </Nav>
           <Nav >
             <Nav.Link eventKey={2} >
