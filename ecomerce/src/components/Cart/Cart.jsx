@@ -20,9 +20,9 @@ function Cart( { greeting })  {
 
     if (totalInCart() === 0 ) {
         return(
-            <div className='text-center'>
+            <div className='text-center p-5 m-5'>
                 <h1 className=' display-5 fw-semibold my-5 text-danger'>No hay productos en el carrito</h1>
-                <Link to='/' className='btn btn-outline-light fw-semibold fs-5'>Realizar Compra</Link>
+                <Link to='/' className='btn btn-outline-danger fw-semibold fs-5 m-5'>Realizar Compra</Link>
             </div>
         )
     }
