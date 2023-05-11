@@ -4,7 +4,6 @@ export const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 export const CartProvider = ({children}) => {
 
-    //carrito comienza vacio
     const [cartList, setCartList] = useState([])
 
     //agregar producto
@@ -33,7 +32,7 @@ export const CartProvider = ({children}) => {
     }   
 
     //cantidad total de la compra
-    const totalBuys = () => cartList.reduce((total, prod) => total + prod.precio * prod.quantity, 0) 
+    const totalBuys = () => cartList.reduce((total, prod) => total + prod.price * prod.quantity, 0) 
     
     //cantidad total de productos en carrito
     const totalInCart = () => cartList.reduce( (total, prod) => total + prod.quantity, 0) 
