@@ -10,7 +10,7 @@ export const checkoutValidacion = (WrappedComponent) => {
             let isValid = true
 
             if(!props.dataForm.name){
-                newErrors.name = 'El campo no puede estar vacio'
+                newErrors.name = 'El campo no puede estar vacio, porfavor ingrese su nombre'
                 isValid = false
             }
             if(!props.dataForm.phone){
@@ -18,7 +18,7 @@ export const checkoutValidacion = (WrappedComponent) => {
                 isValid = false
             }
             if(!props.dataForm.email){
-                newErrors.email = 'El campo no puede estar vacio'
+                newErrors.email = 'El campo no puede estar vacio, ingrese su mail'
                 isValid = false
             }
             if(!props.dataForm.emailConfirm){
@@ -26,7 +26,7 @@ export const checkoutValidacion = (WrappedComponent) => {
                 isValid = false
             }
             if(props.dataForm.emailConfirm !== props.dataForm.email){
-                newErrors.email = 'Debe ingresar el mismo email'
+                newErrors.email = 'Debe ingresar el mismo email, para confirmar'
                 isValid = false
             }
             setErrors(newErrors)
