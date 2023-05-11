@@ -3,61 +3,64 @@ import { useContext, useState } from 'react'
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
-function Checkout() {
+function Checkout({ greeting }) {
 
-        const {cartList, totalCompra} = useContext(CartContext)
+        const {cartList, totalBuys, clearCart} = useContext(CartContext)
         
-        //defino estados para el form
+        const [ordenId, setOrdenId] = useState(null);
         const [dataForm, setDataForm] = useState({
             name: '',
             phone: '',
             email: '',
         })
         
-        const generarOrden = (evt) => {
+        const generateOrder = (evt) => {
 
             evt.preventDefault()
             const order = {}
             order.buyer = dataForm;
             order.items = cartList.map(({ titulo, id, precio, cantidad}) => ({id, titulo, precio, cantidad}))
-            order.total = totalCompra()
-            //console.log(order)
+            order.total = totalBuys()
     
             const dbFirestore = getFirestore()
             const orderCollection = collection (dbFirestore, 'orders')
             //insertar una orden a firebase
             addDoc(orderCollection, order)
-            .then(resp => console.log(resp))
+            .then(resp => { setOrdenId(resp.id)})
+            .catch( (err) => console.log(err) )
+            .finally( () => { 
+                setDataForm( {name: '', phone: '', email: ''} )  
+                setTimeout( () => { clearCart() }, 2000)
+            }) 
         }
-        //console.log(totalCompra())
     
-        //funcion para el form 
-        const handleOnChange = (evt) => {
-            //para acceder es por target
-            console.log('nombre del input', evt.target.name)
-            console.log('valor del input ', evt.target.value)
-    
+        const handleForm = (evt) => {    
             setDataForm({
                 ...dataForm,
-                //campo dinamico
                 [evt.target.name]: evt.target.value
             })
     
         }
-        //console.log(dataForm)
-
 
   return (
-    <div>
-        <h1>Checkout</h1>
-        {/* aca va el componete form */}
-        
-        <CheckoutForm generarOrden={generarOrden} handleOnChange={handleOnChange} dataForm={dataForm} />
-
-
-    </div>
+    <>
+     {
+        ordenId 
+        ? (<div className='text-center m-5'>
+                <h1 >El id de su orden es: </h1>
+                <p className=' fs-4 fw-semibold my-5 text-success'>{ ordenId}</p>
+                <p className=' fs-3'>Gracias por su compra!!</p>
+                <Link className='btn btn-warning fw-semibold text-dark my-5' to='/'>Volver al Inicio</Link>
+          </div>)
+        : (<div className='d-flex flex-column text-center align-items-center gap-5'>
+            <h1 className='m-5'>{greeting}</h1>        
+            <CheckoutForm generateOrder={generateOrder} handleForm={handleForm} dataForm={dataForm} />
+          </div>)
+     }
+    </>
   )
 }
 
