@@ -27,7 +27,7 @@ function ItemDetail({id, img, title, price, category}) {
          
         <Card.Img variant='center' src={img} alt="imagen del producto" style={ {width: '15rem', height: '15rem'} }/>
         <Container className=''>
-          <Card.Title className='fs-4'>{title}</Card.Title>
+          <Card.Title className='fs-4'>{category} {title}</Card.Title>
           <Card.Text className='fs-5'>Precio: ${price}</Card.Text>
             <Card.Text className=''> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Magnam natus dolore praesentium officiis! In nam aperiam atque tenetur, 
