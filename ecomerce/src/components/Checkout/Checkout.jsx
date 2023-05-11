@@ -1,9 +1,10 @@
 
 import { useContext, useState } from 'react'
-import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+
+import CheckoutForm from '../CheckoutForm/CheckoutForm'
 
 
 function Checkout({ greeting }) {
@@ -22,7 +23,7 @@ function Checkout({ greeting }) {
             evt.preventDefault()
             const order = {}
             order.buyer = dataForm;
-            order.items = cartList.map(({ titulo, id, precio, cantidad}) => ({id, titulo, precio, cantidad}))
+            order.items = cartList.map(({ title, id, price, quantity}) => ({id, title, price, quantity}))
             order.total = totalBuys()
     
             const dbFirestore = getFirestore()
