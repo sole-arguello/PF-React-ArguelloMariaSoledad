@@ -1,32 +1,31 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
-//import { getProductByCategory, getProductos } from "../../utils/mockFetch";
-import { Container } from 'react-bootstrap'
 //componentes
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading";
+//estilos
+import { Container } from 'react-bootstrap'
 
 
 function ItemsListContainer({ greeting }) {
   
-    const [productos, setProductos ] = useState([])
+    const [product, setProduct ] = useState([])
     const [isLoading, setIsLoading ] = useState(true)
     
     const { prodCateg } = useParams()
-    console.log(prodCateg)
 
     useEffect( () => {
       setTimeout( () => {
-        //guardo mi db
+  
         const dbFirestore = getFirestore()
-        //muestro x categoria o todos los productos
+      
         const categoryRef = prodCateg
-              ? query( collection ( dbFirestore, 'productos'), where ( 'categoria', '==', prodCateg ) )
-              : collection ( dbFirestore, 'productos')         
+              ? query( collection ( dbFirestore, 'product'), where ( 'category', '==', prodCateg ) )
+              : collection ( dbFirestore, 'product')         
 
         getDocs(categoryRef)
-           .then(resp => setProductos(resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ))))
+           .then(resp => setProduct(resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ))))
            .catch(err => console.log(err))
            .finally( () => setIsLoading(false))
       }, 1000)
@@ -39,7 +38,7 @@ function ItemsListContainer({ greeting }) {
       <Container>
           { isLoading 
           ? <Loading/>
-          : <ItemList productos = { productos }/> }
+          : <ItemList product = { product }/> }
       </Container>
     </> 
   );
