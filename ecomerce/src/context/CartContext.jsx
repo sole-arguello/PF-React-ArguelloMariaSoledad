@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 
-
 export const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 export const CartProvider = ({children}) => {
@@ -11,12 +10,12 @@ export const CartProvider = ({children}) => {
     //agregar producto
     const addItem = (newProduct) => {
         const index = cartList.findIndex(prod => prod.id === newProduct.id)
-        console.log(index)
+        
         if(index === -1){
             setCartList([...cartList, newProduct])
         }else{
             const actualizoCartList = [...cartList]
-            actualizoCartList[index].cantidad += newProduct.cantidad
+            actualizoCartList[index].quantity += newProduct.quantity
             setCartList(actualizoCartList)
         }
     }
@@ -34,10 +33,10 @@ export const CartProvider = ({children}) => {
     }   
 
     //cantidad total de la compra
-    const totalBuys = () => cartList.reduce((total, prod) => total + prod.precio * prod.cantidad, 0) 
+    const totalBuys = () => cartList.reduce((total, prod) => total + prod.precio * prod.quantity, 0) 
     
     //cantidad total de productos en carrito
-    const totalInCart = () => cartList.reduce( (total, prod) => total + prod.cantidad, 0) 
+    const totalInCart = () => cartList.reduce( (total, prod) => total + prod.quantity, 0) 
 
     return(
         <CartContext.Provider value={{
