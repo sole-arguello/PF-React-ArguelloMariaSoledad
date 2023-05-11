@@ -1,4 +1,4 @@
-<img src='./imgReadme/react1.jpg' >
+<img src='./imgReadme/react1.jpg' align='right'>
 
 <br>
 <h1>Proyecto Final - Curso React Js Vite Comision 39660 CoderHouse</h1>
