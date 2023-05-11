@@ -1,7 +1,7 @@
 //librerias 
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";  
-//componentes creados por mi 
+//componentes  
 import NavBar from "./components/NavBar/NavBar";
 import ItemsListContainer from "./components/ItemsListContainer/ItemsListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
