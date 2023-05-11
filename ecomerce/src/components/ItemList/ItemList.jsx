@@ -2,7 +2,7 @@ import { memo } from 'react'
 import Item from '../Item/Item'
 
 const ItemList = memo ( function ( { product } ) {
-  console.log('ItemList')
+
   return (
     <div className='row g-3 justify-content-center'>
 
