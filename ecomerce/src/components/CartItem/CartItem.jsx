@@ -3,9 +3,9 @@ import { CartContext } from '../../context/CartContext'
 import '../CartItem/cartItem.css'
 
 
-function CartItem({id, precio, img, titulo, categoria, cantidad}) {
+function CartItem({id, precio, img, titulo, cantidad}) {
     const {removeItem, cartList} = useContext(CartContext)
-    //console.log(cartList)
+
     return(
         <div className='p-sm-5 d-md-flex flex-md-row p-lg-3 align-items-sm-center gap-lg-5 card bg-light' >
             
@@ -15,7 +15,6 @@ function CartItem({id, precio, img, titulo, categoria, cantidad}) {
                 <div className='px-md-3'>
                     <small className=''>Titulo</small>
                     <div className="d-sm-flex gap-sm-2 ">
-                        <h4 className=''>{categoria} </h4>
                         <h4 className=''>{titulo}</h4>
                     </div>
                 </div>

@@ -5,25 +5,24 @@ import { Link } from 'react-router-dom'
 import Checkout from '../Checkout/Checkout'
 
 function Cart( { greeting })  {
-    const [form, setForm] = useState(false)
+    const [checkout, setCheckout] = useState(false)
 
-    const {cartList, clearCart, totalEnCarrito, totalCompra} = useContext(CartContext)
+    const {cartList, clearCart, totalEnCarrito, totalBuys} = useContext(CartContext)
     
-    const handleClik = () => {
-        setForm(true)
-        //console.log("hola")
+    const handleCheckout = () => {
+        setCheckout(true)
     }
 
-    if(form){
-       return (<Checkout cartList={cartList} totalCompra={totalCompra}/>)
+    if(checkout){
+       <Checkout cartList={cartList} totalBuys={totalBuys}/>
     }
 
 
-    if (totalEnCarrito === 0) {
+    if (totalEnCarrito() === 0 ) {
         return(
             <div className='text-center'>
                 <h1 className=' display-5 fw-semibold my-5 text-danger'>No hay productos en el carrito</h1>
-                <Link to='/' className='btn btn-outline-primary fw-semibold fs-5'>Realizar Compra</Link>
+                <Link to='/' className='btn btn-outline-light fw-semibold fs-5'>Realizar Compra</Link>
             </div>
         )
     }
@@ -41,14 +40,9 @@ function Cart( { greeting })  {
                     <button onClick={ clearCart } className='btn btn-outline-danger mx-2'>Vaciar Carrito</button>
                 </div>
 
-                <div className="carrito__acciones--derecha d-sm-flex gap-3">
-                    <p className='carrito__acciones--total'>Total: $ { totalCompra() }</p>
-
-                
-                    <Link to='/ckeckout' onClick={handleClik}>
-                        checkout
-                        {/* <Checkout cartList={cartList} totalCompra={totalCompra}/> */}
-                    </Link>
+                <div className="carrito__acciones--derecha d-sm-flex gap-5">
+                    <p className='carrito__acciones--total'>Total a pagar: $ { totalBuys() }</p>
+                    <Link className='btn btn-outline-success' to='/ckeckout' onClick={handleCheckout}> Checkout </Link>
                     
                 </div>
             </div>
@@ -56,6 +50,4 @@ function Cart( { greeting })  {
         </div>
     )
 }
-
-
 export default Cart

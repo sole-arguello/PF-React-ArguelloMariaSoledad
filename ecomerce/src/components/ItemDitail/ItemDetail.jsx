@@ -24,23 +24,22 @@ function ItemDetail({id, img, titulo, precio, categoria}) {
   
 
   return (
-    <Card className='container d-flex flex-md-row py-3'>
+    <Card className='container d-flex flex-md-row py-3 w-75'>
          
-        <Card.Img variant='' src={img} alt="imagen del producto" />
+        <Card.Img variant='center' src={img} alt="imagen del producto" style={ {width: '15rem', height: '15rem'} }/>
         <Container className=''>
-          <Card.Title className='fs-4'>{categoria} {titulo}</Card.Title>
+          <Card.Title className='fs-4'>{titulo}</Card.Title>
           <Card.Text className='fs-5'>Precio: ${precio}</Card.Text>
-            <Card.Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            <Card.Text className=''> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Magnam natus dolore praesentium officiis! In nam aperiam atque tenetur, 
-                labore alias est ipsum quas, molestiae accusamus rerum! Molestias 
-                architecto tempora odit?
+
             </Card.Text>
 
             {
               isCant
               ? <ItemCount initial={1} stock={10} onAdd={handleOnAdd}/>
               : <>
-                  <Link to='/cart' className='btn btn-outline-danger mx-2'>Finalizar Compra</Link>
+                  <Link to='/cart' className='btn btn-outline-danger m-3'>Ir al Carrito</Link>
                   <Link to='/'className='btn btn-outline-success'>Continuar Comprando</Link>
                 </>
             }
