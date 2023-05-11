@@ -10,7 +10,7 @@ import { Container } from 'react-bootstrap'
 
 function ItemsListContainer({ greeting }) {
   
-    const [product, setProduct ] = useState([])
+    const [products, setProducts ] = useState([])
     const [isLoading, setIsLoading ] = useState(true)
     
     const { prodCateg } = useParams()
@@ -21,13 +21,13 @@ function ItemsListContainer({ greeting }) {
         const dbFirestore = getFirestore()
       
         const categoryRef = prodCateg
-              ? query( collection ( dbFirestore, 'product'), where ( 'category', '==', prodCateg ) )
-              : collection ( dbFirestore, 'product')         
+              ? query(collection(dbFirestore, 'products'), where ('category', '==', prodCateg))
+              : collection ( dbFirestore, 'products')         
 
         getDocs(categoryRef)
-           .then(resp => setProduct(resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ))))
+           .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
            .catch(err => console.log(err))
-           .finally( () => setIsLoading(false))
+           .finally(() => setIsLoading(false))
       }, 1000)
     }, [prodCateg])
 
@@ -38,7 +38,7 @@ function ItemsListContainer({ greeting }) {
       <Container>
           { isLoading 
           ? <Loading/>
-          : <ItemList product = { product }/> }
+          : <ItemList products={products}/> }
       </Container>
     </> 
   );
