@@ -4,29 +4,29 @@ import { Button, Container} from 'react-bootstrap'
 
 function ItemCount( { initial, stock, onAdd }) {
 
-    const [ cantidad, setCantidad ] = useState (initial)
+    const [ quantity, setquantity ] = useState (initial)
   
-    const sumar = () => {
-      if (cantidad < stock) {
-        setCantidad(cantidad + 1)
+    const add = () => {
+      if (quantity < stock) {
+        setquantity(quantity + 1)
       }
     }
   
-    const restar = () => {
-      if (cantidad > 1) {
-        setCantidad(cantidad - 1)
+    const subtract = () => {
+      if (quantity > 1) {
+        setquantity(quantity - 1)
       }
     }
   return (
    
     <Container className='py-3'>
          <Container className='d-flex py-1'>
-            <Button variant='warning border-secondary' onClick={restar} > - </Button>
-            <h4 className='px-3 '> {cantidad} </h4>
-            <Button variant='warning border-secondary' onClick={sumar} > + </Button>
+            <Button variant='warning border-secondary' onClick={subtract} > - </Button>
+            <h4 className='px-3 '> {quantity} </h4>
+            <Button variant='warning border-secondary' onClick={add} > + </Button>
          </Container>
         
-         <Button variant="warning border-secondary my-3" onClick={ () => onAdd(cantidad)} disabled = {!stock}>Agregar al carrito</Button>
+         <Button variant="warning border-secondary my-3" onClick={ () => onAdd(quantity)} disabled = {!stock}>Agregar al carrito</Button>
     </Container>
   )
 }
