@@ -5,9 +5,10 @@ import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
+import { checkoutValidacion } from '../CheckoutForm/checkoutValidation'
 
-
-function Checkout({ greeting }) {
+const CheckoutValidacion = checkoutValidacion(CheckoutForm)
+function Checkout({ greeting, validateForm}) {
 
         const {cartList, totalBuys, clearCart} = useContext(CartContext)
         
@@ -16,11 +17,15 @@ function Checkout({ greeting }) {
             name: '',
             phone: '',
             email: '',
+            emailConfirm: '',
         })
         
         const generateOrder = (evt) => {
 
             evt.preventDefault()
+            if(validateForm()){
+                console.log('enviado:', dataForm )
+            }
             const order = {}
             order.buyer = dataForm;
             order.items = cartList.map(({ title, id, price, quantity}) => ({id, title, price, quantity}))
@@ -33,12 +38,13 @@ function Checkout({ greeting }) {
             .then(resp => { setOrdenId(resp.id)})
             .catch( (err) => console.log(err) )
             .finally( () => { 
-                setDataForm( {name: '', phone: '', email: ''} )  
+                setDataForm( {name: '', phone: '', email: '', emailConfirm: ''} )  
                 setTimeout( () => { clearCart() }, 2000)
             }) 
         }
     
-        const handleForm = (evt) => {    
+        const handleForm = (evt) => {  
+
             setDataForm({
                 ...dataForm,
                 [evt.target.name]: evt.target.value
@@ -56,9 +62,9 @@ function Checkout({ greeting }) {
                 <p className=' fs-3'>Gracias por su compra!!</p>
                 <Link className='btn btn-warning fw-semibold text-dark my-5' to='/'>Volver al Inicio</Link>
           </div>)
-        : (<div className='d-flex flex-column text-center align-items-center gap-5'>
+        : (<div className='d-flex flex-column text-center mx-5 px-5 gap-5 w-75'>
             <h1 className='m-5'>{greeting}</h1>        
-            <CheckoutForm generateOrder={generateOrder} handleForm={handleForm} dataForm={dataForm} />
+            <CheckoutValidacion generateOrder={generateOrder} handleForm={handleForm} dataForm={dataForm} />
           </div>)
      }
     </>
