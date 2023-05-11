@@ -7,7 +7,7 @@ import Checkout from '../Checkout/Checkout'
 function Cart( { greeting })  {
     const [checkout, setCheckout] = useState(false)
 
-    const {cartList, clearCart, totalBuys} = useContext(CartContext)
+    const {cartList, clearCart, totalBuys, totalInCart} = useContext(CartContext)
     
     const handleCheckout = () => {
         setCheckout(true)
@@ -18,7 +18,7 @@ function Cart( { greeting })  {
     }
 
 
-    if (totalEnCarrito() === 0 ) {
+    if (totalInCart() === 0 ) {
         return(
             <div className='text-center'>
                 <h1 className=' display-5 fw-semibold my-5 text-danger'>No hay productos en el carrito</h1>
