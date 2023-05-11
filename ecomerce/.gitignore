@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 notas.txt
+src/utils
 
 # Editor directories and files
 .vscode/*

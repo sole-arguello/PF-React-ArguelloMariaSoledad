@@ -1,9 +1,9 @@
-firestore:
-https://console.firebase.google.com/u/0/project/ecommerce-react-8ae98/firestore/data/~2Fproductos~2FJk7gg1K4IBfjzIRw5lbG?hl=es-419
+mi firestore:
+https://console.firebase.google.com/u/0/
 
-https://github.com/luisdatc/PF-TorresLuis-JS
+---------------------------------------------------------------
 
-https://github.com/BlasCasale/proyecto-rjs/tree/main
+
 crear:
 
 1- dentro de la carpeta 
@@ -40,4 +40,12 @@ https://react-bootstrap.github.io/
 estructura bootstrap
 div container 
 div row g-3 justify-content-center
-div col-lg-3 col-md-6 col-sm-10 y dentro las cards00
+div col-lg-3 col-md-6 col-sm-10 y dentro las cards
+
+
+
+https://console.firebase.google.com/u/0/project/ecommerce-react-8ae98/firestore/data/~2Fproductos~2FJk7gg1K4IBfjzIRw5lbG?hl=es-419
+
+https://github.com/luisdatc/PF-TorresLuis-JS
+
+https://github.com/BlasCasale/proyecto-rjs/tree/main

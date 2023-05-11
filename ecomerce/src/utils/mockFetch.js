@@ -17,8 +17,15 @@ export const getProductByCategory = (category) => {
     })
   }
 
+
+
 let productos = [
-  {id: '1', precio: 1200, titulo: "Encaje", categoria: "Conjunto", stock: 20, img: "/public/assets/conjunto1.jpg",},
+  {id: '1',
+   precio: 1200, 
+   titulo: "Encaje", 
+   categoria: "Conjunto", 
+   stock: 20, 
+   img: "/public/assets/conjunto1.jpg",},
   {
     id: '2',
     precio: 1500,
@@ -43,6 +50,7 @@ let productos = [
     stock: 20,
     img: "/public/assets/conjunto4.jpg",
   },
+  
   {
     id: '5',
     precio: 1400,
@@ -60,6 +68,7 @@ let productos = [
     stock: 20,
     img: "/public/assets/top2.jpg",
   },
+ 
   {
     id: '7',
     precio: 1600,
@@ -112,6 +121,6 @@ let productos = [
     stock: 20,
     img: "/public/assets/bombis4.jpg",
   },
-];
+]; // category price title quantity
 
 
