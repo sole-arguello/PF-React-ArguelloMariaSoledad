@@ -10,6 +10,7 @@ import Checkout from "./components/Checkout/Checkout";
 //estilos 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
        </Routes>
       
+       <Footer/>
       </BrowserRouter>
     </CartProvider>
   );
