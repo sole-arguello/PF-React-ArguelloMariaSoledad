@@ -22,6 +22,11 @@ correr el servidor
 
 npm run dev
 
+detener el proyecto con ctrl + c y correr
+npm run build -> esto hace los hace estaticos generando una carpeta dist LO TRANSPILO
+
+deploy: https://app.netlify.com/teams/sole-arguello/overview
+
 
 para importar dentro de los componentes 
 
