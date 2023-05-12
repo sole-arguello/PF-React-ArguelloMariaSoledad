@@ -27,6 +27,11 @@ npm run build -> esto hace los hace estaticos generando una carpeta dist LO TRAN
 
 deploy: https://app.netlify.com/teams/sole-arguello/overview
 
+(!) Some chunks are larger than 500 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
 
 para importar dentro de los componentes 
 
