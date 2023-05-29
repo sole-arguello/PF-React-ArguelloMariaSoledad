@@ -23,7 +23,7 @@ function ItemDetail({id, img, title, price, category}) {
   
 
   return (
-    <Card className='container d-flex flex-md-row w-75'>
+    <Card className='container d-flex flex-md-row w-75 mb-4'>
          
         <Card.Img variant='center' src={img} alt="imagen del producto" style={ {width: '15rem', height: '15rem'} }/>
         <Container className=''>
