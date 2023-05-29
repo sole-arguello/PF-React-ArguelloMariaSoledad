@@ -8,8 +8,8 @@
 @media (width < 576px) {
     .carrito__producto--imag {
         /* width: 20rem; */
-        width: 2rem;
-        border: 1px solid red;
+        /* width: 2rem;
+        border: 1px solid red; */
 
         
     }

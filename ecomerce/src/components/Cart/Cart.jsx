@@ -27,7 +27,7 @@ function Cart( { greeting })  {
         )
     }
     return (
-        <div className=' d-flex flex-sm-column gap-2 h-100 mb-5 pb-1'>
+        <div className=' d-flex flex-column gap-2 h-100 mb-5 pb-5'>
             <h2 className='text-center fs-1 fw-semibold pt-3'> { greeting } </h2>
             <div className=" d-flex flex-column align-items-center gap-2 w-100">            
             
@@ -35,9 +35,9 @@ function Cart( { greeting })  {
 
             </div>
 
-            <div className="carrito__acciones d-sm-flex justify-content-around mt-2 px-5">
+            <div className="carrito__acciones d-flex flex-column-reverse flex-md-row align-items-center justify-content-around text-center mt-4 px-5 mx-md-5">
                 <div className="carrito__acciones--izquierda">
-                    <button onClick={ clearCart } className='btn btn-outline-danger mx-2'>Vaciar Carrito</button>
+                    <button onClick={ clearCart } className='btn btn-outline-danger mx-2 mt-2'>Vaciar Carrito</button>
                 </div>
 
                 <div className="carrito__acciones--derecha d-sm-flex gap-5">
