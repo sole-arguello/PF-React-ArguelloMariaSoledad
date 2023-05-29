@@ -9,20 +9,20 @@ function CheckoutForm({handleForm, generateOrder, dataForm, errors, validateForm
       }
 
   return (
-    <div className="mx-5 px-5 pb-5 mb-5 ">
-      <form onSubmit={handleOnSubmit} className=' d-flex flex-column gap-2 mx-5 px-5'>
+    <div className="pb-5 mb-5 px-md-5 mx-lg-5">
+      <form onSubmit={handleOnSubmit} className='px-3 px-md-5 mx-lg-5'>
 
         {errors && errors.name && <span className="text-danger me-auto"> {errors.name}</span>}
-        <input onChange={handleForm} type="text" name='name' value={dataForm.name} placeholder='Ingrese el Nombre'/>
+        <input className="my-2 w-100" onChange={handleForm} type="text" name='name' value={dataForm.name} placeholder='Ingrese el Nombre'/>
         
         {errors && errors.email && <span className="text-danger me-auto"> {errors.phone}</span>}
-        <input onChange={handleForm} type="text" name='phone' value={dataForm.phone} placeholder='Ingrese el Telefono'/>
+        <input className="my-2 w-100" onChange={handleForm} type="text" name='phone' value={dataForm.phone} placeholder='Ingrese el Telefono'/>
         
         {errors && errors.email && <span className="text-danger me-auto"> {errors.email}</span>}
-        <input onChange={handleForm} type="text" name='email' value={dataForm.email} placeholder='Ingrese el email'/>
+        <input className="my-2 w-100" onChange={handleForm} type="text" name='email' value={dataForm.email} placeholder='Ingrese el email'/>
         
         {errors && errors.email && <span className="text-danger me-auto">{errors.email}</span>}
-        <input onChange={handleForm} type="text" name='emailConfirm' value={dataForm.emailConfirm} placeholder='Confirme el email'/>
+        <input className="my-2 w-100" onChange={handleForm} type="text" name='emailConfirm' value={dataForm.emailConfirm} placeholder='Confirme el email'/>
         
         <button className="btn btn-outline-secondary w-50 mt-2" type="submit">Finalizar Compra</button>
 

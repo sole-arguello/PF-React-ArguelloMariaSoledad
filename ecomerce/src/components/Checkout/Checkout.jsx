@@ -53,8 +53,8 @@ function Checkout({ greeting }) {
                 <p className=' fs-3'>Gracias por su compra!!</p>
                 <Link className='btn btn-warning fw-semibold text-dark my-5' to='/'>Volver al Inicio</Link>
           </div>)
-        : (<div className='d-flex flex-column text-center mx-5 px-5 gap-2 w-75 pb-3'>
-            <h1 className='m-5'>{greeting}</h1>        
+        : (<div className='text-center my-5'>
+            <h1 className='my-3 my-5'>{greeting}</h1>        
             <CheckoutValidacion generateOrder={generateOrder} handleForm={handleForm} dataForm={dataForm} />
           </div>)
      }
