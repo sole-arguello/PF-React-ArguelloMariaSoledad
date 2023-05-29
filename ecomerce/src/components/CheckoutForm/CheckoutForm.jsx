@@ -22,9 +22,9 @@ function CheckoutForm({handleForm, generateOrder, dataForm, errors, validateForm
         <input className="my-2 w-100" onChange={handleForm} type="text" name='email' value={dataForm.email} placeholder='Ingrese el email'/>
         
         {errors && errors.email && <span className="text-danger me-auto">{errors.email}</span>}
-        <input className="my-2 w-100" onChange={handleForm} type="text" name='emailConfirm' value={dataForm.emailConfirm} placeholder='Confirme el email'/>
+        <input className="my-2 w-100 mb-3" onChange={handleForm} type="text" name='emailConfirm' value={dataForm.emailConfirm} placeholder='Confirme el email'/>
         
-        <button className="btn btn-outline-secondary w-50 mt-2" type="submit">Finalizar Compra</button>
+        <button className="btn btn-outline-secondary w-50 my-5 " type="submit">Finalizar Compra</button>
 
       </form>       
     </div>
