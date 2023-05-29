@@ -2,7 +2,7 @@
 
 function Footer() {
   return (
-    <div className="text-center bg-warning py-1 mt-5">
+    <div className="text-center bg-warning py-2">
         <p className=" fs-2">Realizado por Arguello Soledad</p>
 
     </div>

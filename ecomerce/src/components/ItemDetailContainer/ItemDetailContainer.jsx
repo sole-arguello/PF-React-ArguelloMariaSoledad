@@ -27,10 +27,10 @@ function ItemDetailContainer({greeting}) {
       }, 1000)  
     }, [prodId])
   return (
-    <Container className='pb-5 mb-5'>
-        <h1 className='py-4 text-center'>{ greeting }</h1>
+    <Container className='h-100 mb-5 pb-5'>
+        <h1 className='my-4 text-center'>{ greeting }</h1>
         { isLoading 
-        ? <div className='text-center py-5 my-5'><Spinner  animation="border" variant="warning" /></div> 
+        ? <div className='text-center vh-100'><Spinner  animation="border" variant="warning" /></div> 
         : <ItemDetail {...product}/> }  
     </Container>
   )

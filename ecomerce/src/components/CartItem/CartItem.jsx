@@ -7,7 +7,7 @@ function CartItem({id, price, img, title, quantity, category}) {
     const {removeItem} = useContext(CartContext)
 
     return(
-        <div className='p-sm-5 d-md-flex flex-md-row p-lg-3 align-items-sm-center gap-lg-5 card bg-light' >
+        <div className='p-sm-5 d-md-flex flex-md-row p-lg-3 align-items-sm-center gap-lg-5 card bg-light ' >
             
             <img src={img} className='carrito__producto--imag' />
             

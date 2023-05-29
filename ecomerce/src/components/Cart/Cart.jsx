@@ -27,15 +27,15 @@ function Cart( { greeting })  {
         )
     }
     return (
-        <div className=' d-flex flex-sm-column gap-2 pb-5 mb-5'>
-            <h2 className='text-center fs-1 fw-semibold'> { greeting } </h2>
+        <div className=' d-flex flex-sm-column gap-2 h-100 mb-5 pb-1'>
+            <h2 className='text-center fs-1 fw-semibold pt-3'> { greeting } </h2>
             <div className=" d-flex flex-column align-items-center gap-2 w-100">            
             
              { cartList.map( prod => <CartItem key = {prod.id} {...prod} /> ) }
 
             </div>
 
-            <div className="carrito__acciones d-sm-flex justify-content-around">
+            <div className="carrito__acciones d-sm-flex justify-content-around mt-2 px-5">
                 <div className="carrito__acciones--izquierda">
                     <button onClick={ clearCart } className='btn btn-outline-danger mx-2'>Vaciar Carrito</button>
                 </div>
