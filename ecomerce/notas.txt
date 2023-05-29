@@ -17,13 +17,18 @@ crear:
 9- ctrl + c detiene el servidor
 10- mpn i sass (instala dependencias de sass)
 11- vuelvo a correr el servidor npm run dev
+12- correr el servidor npm run dev
 
-correr el servidor 
+13- los componentes de crean con mayusculas y son extencion jsx 
+    con rfce + tab denyro del componenete y se crea solo el archivo a trabaja ya importado
 
-npm run dev
+14- para instalar el ruteo: npm i react-router-dom
 
-detener el proyecto con ctrl + c y correr
-npm run build -> esto hace los hace estaticos generando una carpeta dist LO TRANSPILO
+
+15- para hacer el proyecto dinamico y el deploy, detener el proyecto con ctrl + c y correr
+    npm run build -> esto hace los hace estaticos generando una carpeta dist LO TRANSPILO
+
+
 
 deploy: https://app.netlify.com/teams/sole-arguello/overview
 

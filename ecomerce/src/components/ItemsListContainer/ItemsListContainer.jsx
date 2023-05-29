@@ -34,7 +34,7 @@ function ItemsListContainer({ greeting }) {
 
   return (
     <>
-      <h1 className="py-5 text-center">{greeting}</h1>
+      <h1 className="py-1 text-center">{greeting}</h1>
       <Container>
           { isLoading 
           ? <Loading/>

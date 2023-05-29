@@ -8,7 +8,7 @@ import CartWiget from '../CartWiget/CartWiget'
 const NavBar = () => {
   return (
 
-    <Navbar className='py-4 sticky-top' collapseOnSelect expand="lg" bg="warning" variant="">
+    <Navbar className='py-1 sticky-top' collapseOnSelect expand="lg" bg="warning" variant="">
       <Container >
         <Navbar.Brand className='fs-2' >
           Ala Cachufleta Ecomerce

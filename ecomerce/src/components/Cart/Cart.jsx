@@ -27,8 +27,8 @@ function Cart( { greeting })  {
         )
     }
     return (
-        <div className=' d-flex flex-sm-column gap-5'>
-            <h2 className='text-center pt-5 fs-1 fw-semibold'> { greeting } </h2>
+        <div className=' d-flex flex-sm-column gap-2 pb-5 mb-5'>
+            <h2 className='text-center fs-1 fw-semibold'> { greeting } </h2>
             <div className=" d-flex flex-column align-items-center gap-2 w-100">            
             
              { cartList.map( prod => <CartItem key = {prod.id} {...prod} /> ) }
