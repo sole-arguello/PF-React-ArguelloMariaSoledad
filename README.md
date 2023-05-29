@@ -1,6 +1,6 @@
 # PF-React-ArguelloMariaSoledad
 
-### Demo: https://alacachufleta.netlify.app/
+### Demo: https://alacachufleta.netlify.app
 
 <img src='./ecomerce/imgReadme/portada.png'>
 <br>
