@@ -3,7 +3,7 @@
 <br>
 <h1>Proyecto Final - Curso React Js Vite Comision 39660 CoderHouse</h1>
 <br>
-<h1> Demo: https://alacachufleta.netlify.app/ </h1>
+<h1> Demo: https://alacachufleta.netlify.app </h1>
 <br>
 
 <img src='./imgReadme/portada.png'>

@@ -54,7 +54,7 @@ function Checkout({ greeting }) {
                 <Link className='btn btn-warning fw-semibold text-dark my-5' to='/'>Volver al Inicio</Link>
           </div>)
         : (<div className='text-center my-5'>
-            <h1 className='my-3 my-5'>{greeting}</h1>        
+            <h1 className='py-5 my-5'>{greeting}</h1>        
             <CheckoutValidacion generateOrder={generateOrder} handleForm={handleForm} dataForm={dataForm} />
           </div>)
      }
